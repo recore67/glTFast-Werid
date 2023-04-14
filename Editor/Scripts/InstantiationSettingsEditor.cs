@@ -40,7 +40,7 @@ namespace GLTFast.Editor
             Utils.CreateProperty(container, prop, "Components");
 
             prop = serializedObject.FindProperty($"{pathPrefix}layer");
-            var layerField = new LayerField("Destination Layer");
+            var layerField = new LayerField("Destination Layers");
 
 #if UNITY_2021_2_OR_NEWER
             layerField.AddToClassList(BaseField<LayerField>.alignedFieldUssClassName);
