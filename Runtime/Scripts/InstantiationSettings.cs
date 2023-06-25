@@ -70,6 +70,18 @@ namespace GLTFast
             set => sceneObjectCreation = value;
         }
 
+        public GameObject Magazine
+        {
+            get => magazine;
+            set => magazine = value;
+        }
+
+        public bool CastShadows
+        {
+            get => castShadows;
+            set => castShadows = value;
+        }
+
         [SerializeField]
         [Tooltip("Filter component instantiation based on type")]
         ComponentType mask = ComponentType.All;
@@ -85,6 +97,14 @@ namespace GLTFast
         [SerializeField]
         [Tooltip("Light intensity values are multiplied by this factor")]
         float lightIntensityFactor = 1.0f;
+
+        [SerializeField]
+        [Tooltip("Magazine gameobject")]
+        GameObject magazine = null;
+
+        [SerializeField]
+        [Tooltip("Determine whether render can cast shadows")]
+        bool castShadows = false;
 
         [SerializeField]
         [Tooltip("Scene object creation method. Determines whether or when a GameObject/Entity representing the scene should get created.")]

@@ -219,6 +219,17 @@ namespace GLTFast
         }
 
         /// <inheritdoc />
+        public virtual void SetMagParent(uint nodeIndex, string name)
+        {
+            if (m_Settings.Magazine != null)
+                if (m_Nodes[nodeIndex].name.Contains("_Mag"))
+                {
+                    // m_Nodes[nodeIndex].tag = "_mag";
+                    m_Nodes[nodeIndex].transform.parent = m_Settings.Magazine.transform;
+                }
+        }
+
+        /// <inheritdoc />
         public virtual void AddPrimitive(
             uint nodeIndex,
             string meshName,
@@ -256,6 +267,7 @@ namespace GLTFast
                 var mf = meshGo.AddComponent<MeshFilter>();
                 mf.mesh = mesh;
                 var mr = meshGo.AddComponent<MeshRenderer>();
+                mr.shadowCastingMode = m_Settings.CastShadows ? UnityEngine.Rendering.ShadowCastingMode.On : UnityEngine.Rendering.ShadowCastingMode.Off;
                 renderer = mr;
             }
             else

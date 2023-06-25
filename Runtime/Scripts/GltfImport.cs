@@ -2387,6 +2387,8 @@ namespace GLTFast
                 }
 
                 instantiator.SetNodeName(nodeIndex, goName);
+                
+                instantiator.SetMagParent(nodeIndex, goName);
 
                 if (node.camera >= 0
                     && gltf.cameras != null

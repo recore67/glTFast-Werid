@@ -76,6 +76,13 @@ namespace GLTFast
         void SetNodeName(uint nodeIndex, string name);
 
         /// <summary>
+        /// Finds and sets magazine tag and parent.
+        /// </summary>
+        /// <param name="nodeIndex">Index of the node to be named.</param>
+        /// <param name="name">Valid name or null</param>
+        void SetMagParent(uint nodeIndex, string name);
+
+        /// <summary>
         /// Called for adding a Primitive/Mesh to a Node.
         /// </summary>
         /// <param name="nodeIndex">Index of the node</param>

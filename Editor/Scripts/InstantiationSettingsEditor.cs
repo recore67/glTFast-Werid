@@ -40,7 +40,7 @@ namespace GLTFast.Editor
             Utils.CreateProperty(container, prop, "Components");
 
             prop = serializedObject.FindProperty($"{pathPrefix}layer");
-            var layerField = new LayerField("Destination Layers");
+            var layerField = new LayerField("Destination Layer");
 
 #if UNITY_2021_2_OR_NEWER
             layerField.AddToClassList(BaseField<LayerField>.alignedFieldUssClassName);
@@ -52,6 +52,8 @@ namespace GLTFast.Editor
                 serializedObject.FindProperty($"{pathPrefix}skinUpdateWhenOffscreen"),
                 serializedObject.FindProperty($"{pathPrefix}lightIntensityFactor"),
                 serializedObject.FindProperty($"{pathPrefix}sceneObjectCreation"),
+                serializedObject.FindProperty($"{pathPrefix}magazine"),
+                serializedObject.FindProperty($"{pathPrefix}castShadows")
             };
             Utils.CreateProperties(container, properties);
         }
